@@ -1,0 +1,22 @@
+{
+  "name": "bassoGeorge.github.io",
+  "version": "0.0.0",
+  "homepage": "http://www.anishgeorge.org",
+  "authors": [
+    "bassoGeorge <anishgeorgehb@gmail.com>"
+  ],
+  "description": "My profile",
+  "main": "index.html",
+  "keywords": [
+    "basso",
+    "george",
+    "profile",
+    "developer",
+    "full-stack"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~4.0.0-alpha"
+  }
+}
