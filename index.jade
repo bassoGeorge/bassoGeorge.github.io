@@ -3,7 +3,7 @@ html(ng-app='agProfile')
   head
     meta(charset="utf-8")
     // All other bower components
-    - var base = ['jquery/dist/jquery.min']
+    - var base = ['jquery/dist/jquery.min', 'underscore/underscore-min']
     - var angularFiles = ['angular/angular.min', 'angular-ui-router/release/angular-ui-router.min']
 
     - var files = base.concat(angularFiles)
@@ -14,9 +14,10 @@ html(ng-app='agProfile')
     // Bootstrap -- given some special treatment
     script(src="bower_components/bootstrap/dist/js/bootstrap.min.js")
     link(href="bower_components/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", rel='stylesheet')
 
 
-    - var localJs = ['app', 'controllers/master']
+    - var localJs = ['app', 'controllers/master', 'directives']
     each file in localJs
       script(src='js/'+file+'.js')
 

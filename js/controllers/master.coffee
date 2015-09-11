@@ -7,4 +7,9 @@
 angular.module('agProfile.controllers', [])
 .controller 'MasterController', ($scope, $state, $log) ->
   $log.info "Master initialized"
-  $state.go 'profile'
+  $state.go 'test'
+
+.controller 'TestController', ($scope) ->
+  $scope.rating = 1.5
+  $scope.incRating = () ->
+    $scope.rating += 0.5

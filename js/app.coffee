@@ -4,10 +4,14 @@
 ###
 angular.module 'agProfile', [
   'ui.router',
-  'agProfile.controllers'
+  'agProfile.controllers', 'agProfile.directives'
 ]
 .config ($stateProvider) ->
   $stateProvider
   .state('profile',
     templateUrl: './templates/views/view_profile.html'
+  )
+  .state('test',
+    templateUrl: './templates/views/view_test.html'
+    controller: 'TestController'
   )

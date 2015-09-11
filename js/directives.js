@@ -2,11 +2,68 @@
 (function() {
   angular.module('agProfile.directives', []).directive('agStarRating', function() {
     return {
-      restrict: 'E',
+      restrict: 'AE',
       scope: {
-        rating: '=rating'
+        rating: '=',
+        total: '=',
+        css: '@'
       },
-      templateUrl: './templates/directives/ag_star_rating.html'
+      template: " <i class=\"fa\" ng-repeat=\"star in stars track by $index\" ng-class=\"getClass(star)\"></i> ",
+      compile: function(elem, attr) {
+        if (!attr.total) {
+          return attr.total = "5";
+        }
+      },
+      controller: function($scope) {
+        var update;
+        update = function() {
+          var i, rateInt, rating, rest, stared, total, unstared;
+          rating = parseFloat($scope.rating);
+          total = parseInt($scope.total);
+          rateInt = Math.floor(rating);
+          rest = total - rateInt;
+          stared = (function() {
+            var j, len, ref, results;
+            ref = _.range(rateInt);
+            results = [];
+            for (j = 0, len = ref.length; j < len; j++) {
+              i = ref[j];
+              results.push(1);
+            }
+            return results;
+          })();
+          unstared = (function() {
+            var j, len, ref, results;
+            ref = _.range(rest);
+            results = [];
+            for (j = 0, len = ref.length; j < len; j++) {
+              i = ref[j];
+              results.push(0);
+            }
+            return results;
+          })();
+          if (rateInt < rating) {
+            unstared[0] = 0.5;
+          }
+          return $scope.stars = stared.concat(unstared);
+        };
+        $scope.$watch('rating', update);
+        $scope.$watch('total', update);
+        return $scope.getClass = function(star) {
+          var cls;
+          cls = (function() {
+            switch (star) {
+              case 1:
+                return "fa-star";
+              case 0:
+                return "fa-star-o";
+              case 0.5:
+                return "fa-star-half-o";
+            }
+          })();
+          return cls += " " + $scope.css;
+        };
+      }
     };
   });
 

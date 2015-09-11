@@ -19,6 +19,7 @@
     "angular": "~1.4.5",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~4.0.0-alpha",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3"
   }
 }

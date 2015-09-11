@@ -9,7 +9,12 @@
 (function() {
   angular.module('agProfile.controllers', []).controller('MasterController', function($scope, $state, $log) {
     $log.info("Master initialized");
-    return $state.go('profile');
+    return $state.go('test');
+  }).controller('TestController', function($scope) {
+    $scope.rating = 1.5;
+    return $scope.incRating = function() {
+      return $scope.rating += 0.5;
+    };
   });
 
 }).call(this);
