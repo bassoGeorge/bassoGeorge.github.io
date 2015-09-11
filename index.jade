@@ -1,14 +1,30 @@
 doctype html
-html
+html(ng-app='agProfile')
   head
     meta(charset="utf-8")
-    script(src="bower_components/jquery/dist/jquery.min.js")
+    // All other bower components
+    - var base = ['jquery/dist/jquery.min']
+    - var angularFiles = ['angular/angular.min', 'angular-ui-router/release/angular-ui-router.min']
+
+    - var files = base.concat(angularFiles)
+
+    each file in files
+      script(src='bower_components/'+file+'.js')
+
+    // Bootstrap -- given some special treatment
     script(src="bower_components/bootstrap/dist/js/bootstrap.min.js")
     link(href="bower_components/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
 
-  body
+
+    - var localJs = ['app', 'controllers/master']
+    each file in localJs
+      script(src='js/'+file+'.js')
+
+  body(ng-controller='MasterController')
     .jumbotron.jumbotron-fluid
       .container-fluid.text-center
         h1.display-2 Anish ‘basso’ George
         h3 Full-Stack Web Developer
         p.lead This website is a work in progress
+    .container
+      ui-view

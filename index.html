@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="agProfile">
   <head>
     <meta charset="utf-8">
+    <!-- All other bower components-->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- Bootstrap -- given some special treatment-->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/app.js"></script>
+    <script src="js/controllers/master.js"></script>
   </head>
-  <body>
+  <body ng-controller="MasterController">
     <div class="jumbotron jumbotron-fluid">
       <div class="container-fluid text-center">
         <h1 class="display-2">Anish ‘basso’ George</h1>
         <h3>Full-Stack Web Developer</h3>
         <p class="lead">This website is a work in progress</p>
       </div>
+    </div>
+    <div class="container">
+      <ui-view></ui-view>
     </div>
   </body>
 </html>
