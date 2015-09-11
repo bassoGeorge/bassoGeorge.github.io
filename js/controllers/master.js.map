@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "master.js",
+  "sourceRoot": "",
+  "sources": [
+    "master.coffee"
+  ],
+  "names": [],
+  "mappings": ";;AAAA;;;;;;AAAA;EAMA,OAAO,CAAC,MAAR,CAAe,uBAAf,EAAwC,EAAxC,CACA,CAAC,UADD,CACY,kBADZ,EACgC,SAAC,MAAD,EAAS,MAAT,EAAiB,IAAjB;IAC9B,IAAI,CAAC,IAAL,CAAU,oBAAV;WACA,MAAM,CAAC,EAAP,CAAU,SAAV;EAF8B,CADhC;AANA"
+}
