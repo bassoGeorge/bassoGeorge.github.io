@@ -9,12 +9,17 @@
 (function() {
   angular.module('agProfile.controllers', []).controller('MasterController', function($scope, $state, $log) {
     $log.info("Master initialized");
-    return $state.go('test');
-  }).controller('TestController', function($scope) {
+    if (!$state.is('test')) {
+      return $state.go('profile');
+    }
+  }).controller('TestController', function($scope, agData, $log) {
     $scope.rating = 1.5;
-    return $scope.incRating = function() {
+    $scope.incRating = function() {
       return $scope.rating += 0.5;
     };
+    return agData.get_profile().success(function(data) {
+      return $log.debug("Received the data: " + JSON.stringify(data));
+    });
   });
 
 }).call(this);

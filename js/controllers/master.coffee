@@ -7,9 +7,14 @@
 angular.module('agProfile.controllers', [])
 .controller 'MasterController', ($scope, $state, $log) ->
   $log.info "Master initialized"
-  $state.go 'test'
+  if not $state.is('test')
+    $state.go 'profile'
 
-.controller 'TestController', ($scope) ->
+.controller 'TestController', ($scope, agData, $log) ->
   $scope.rating = 1.5
   $scope.incRating = () ->
     $scope.rating += 0.5
+
+  agData.get_profile()
+  .success (data) ->
+    $log.debug "Received the data: "+JSON.stringify(data)

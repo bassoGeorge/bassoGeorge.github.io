@@ -6,13 +6,15 @@
  */
 
 (function() {
-  angular.module('agProfile', ['ui.router', 'agProfile.controllers', 'agProfile.directives']).config(function($stateProvider) {
-    return $stateProvider.state('profile', {
+  angular.module('agProfile', ['ui.router', 'agProfile.controllers', 'agProfile.directives', 'agProfile.services', 'agProfile.constants']).config(function($stateProvider, agDataProvider) {
+    $stateProvider.state('profile', {
       templateUrl: './templates/views/view_profile.html'
     }).state('test', {
       templateUrl: './templates/views/view_test.html',
-      controller: 'TestController'
+      controller: 'TestController',
+      url: '/test'
     });
+    return agDataProvider.useLocalData(true);
   });
 
 }).call(this);

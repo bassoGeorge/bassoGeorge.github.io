@@ -9,17 +9,29 @@ html(ng-app='agProfile')
     - var files = base.concat(angularFiles)
 
     each file in files
-      script(src='bower_components/'+file+'.js')
+      script(src='bower_components/' + file + '.js')
 
     // Bootstrap -- given some special treatment
     script(src="bower_components/bootstrap/dist/js/bootstrap.min.js")
     link(href="bower_components/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
     link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", rel='stylesheet')
 
+    // Local Javascript
 
-    - var localJs = ['app', 'controllers/master', 'directives']
+    - var controllers = ['master']
+    - controllers.forEach( function(v,i,arr) { arr[i] = 'controllers/' + v })
+
+    - var directives = ['starRating']
+    - directives.forEach( function(v, i, arr) { arr[i] = 'directives/' + v })
+
+    - var services = ['data']
+    - services.forEach( function(v, i, arr) { arr[i] = 'services/' + v })
+
+    - var localJs = ['app', 'constants'].concat(controllers, directives, services)
+
     each file in localJs
-      script(src='js/'+file+'.js')
+      script(src='js/' + file + '.js')
+
 
   body(ng-controller='MasterController')
     .jumbotron.jumbotron-fluid
