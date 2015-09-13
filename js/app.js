@@ -8,7 +8,8 @@
 (function() {
   angular.module('agProfile', ['ui.router', 'agProfile.controllers', 'agProfile.directives', 'agProfile.services', 'agProfile.constants']).config(function($stateProvider, agDataProvider) {
     $stateProvider.state('profile', {
-      templateUrl: './templates/views/view_profile.html'
+      templateUrl: './templates/views/view_profile.html',
+      controller: 'ProfileController'
     }).state('test', {
       templateUrl: './templates/views/view_test.html',
       controller: 'TestController',

@@ -10,6 +10,7 @@ angular.module 'agProfile', [
   $stateProvider
   .state('profile',
     templateUrl: './templates/views/view_profile.html'
+    controller: 'ProfileController'
   )
   .state('test',
     templateUrl: './templates/views/view_test.html'
