@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "profile.js",
+  "sourceRoot": "",
+  "sources": [
+    "profile.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,OAAO,CAAC,MAAR,CAAe,uBAAf,CACA,CAAC,UADD,CACY,mBADZ,EACiC,SAAC,MAAD,EAAS,MAAT;IAC/B,MAAM,CAAC,YAAP,GAAsB;WACtB,MAAM,CAAC,WAAP,CAAA,CACA,CAAC,OADD,CACS,SAAC,IAAD;aACP,MAAM,CAAC,YAAP,GAAsB;IADf,CADT;EAF+B,CADjC;AAAA"
+}
