@@ -1,15 +1,6 @@
 .row(ng-repeat-start="cat in profile_data")
   .col-xs-12.text-center
     h1 {{ cat.name }}
-//
-  .row(ng-repeat-end='')
-    .col-md-6(ng-repeat="category in cat.categories")
-      h3.text-center {{ category.name }}
-      p.text-muted.text-center {{ category.description }}
-      dl.dl-horizontal(ng-repeat="skill in category.skills")
-        dt.col-xs-6.text-right {{ skill.name }}
-        dd.col-xs-6
-          span(ag-star-rating rating="skill.rating" css="text-warning")
 .row(ng-repeat-end='')
   .card-deck-wrapper
     .card-deck

@@ -4,16 +4,6 @@
     <h1>{{ cat.name }}</h1>
   </div>
 </div>
-<!--
-.row(ng-repeat-end='')
-  .col-md-6(ng-repeat="category in cat.categories")
-    h3.text-center {{ category.name }}
-    p.text-muted.text-center {{ category.description }}
-    dl.dl-horizontal(ng-repeat="skill in category.skills")
-      dt.col-xs-6.text-right {{ skill.name }}
-      dd.col-xs-6
-        span(ag-star-rating rating="skill.rating" css="text-warning")
--->
 <div ng-repeat-end="" class="row">
   <div class="card-deck-wrapper">
     <div class="card-deck">
